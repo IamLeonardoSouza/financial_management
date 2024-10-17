@@ -36,7 +36,7 @@ This project is under development and consists of a **financial management syste
 1. Clone the repository:  
    ```bash
    git clone https://github.com/IamLeonardoSouza/financial_management.git
-   cd financial-management-system
+   cd financial_management
    ```
 
 2. Install the dependencies:  
