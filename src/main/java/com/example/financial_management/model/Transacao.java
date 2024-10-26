@@ -1,7 +1,6 @@
 package com.example.financial_management.model;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -12,26 +11,50 @@ public class Transacao {
     private Long id;
 
     private String descricao;
+    private double valor;
+    private String tipo;
 
-    private BigDecimal valor;
-
-    private String tipo; // "GANHO" ou "GASTO"
-
-    private LocalDate data;
+    @Column(name = "data_transacao", nullable = false)  // Indica que a coluna não pode ser nula
+    private LocalDate dataTransacao;
 
     // Getters e Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    public BigDecimal getValor() { return valor; }
-    public void setValor(BigDecimal valor) { this.valor = valor; }
+    public String getDescricao() {
+        return descricao;
+    }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
-    public LocalDate getData() { return data; }
-    public void setData(LocalDate data) { this.data = data; }
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public LocalDate getDataTransacao() {
+        return dataTransacao;
+    }
+
+    public void setDataTransacao(LocalDate dataTransacao) {
+        this.dataTransacao = dataTransacao;
+    }
 }
