@@ -4,26 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Gestão Financeira</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Adicionar Nova Transação</h1>
-    <form action="/transacoes/adicionar" method="post">
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao" name="descricao" required><br><br>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-        <label for="valor">Valor:</label>
-        <input type="number" id="valor" name="valor" step="0.01" required><br><br>
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h1 class="text-2xl font-bold text-center mb-6">Adicionar Transação</h1>
 
-        <label for="tipo">Tipo:</label>
-        <select id="tipo" name="tipo" required>
-            <option value="Gasto">Gasto</option>
-            <option value="Ganho">Ganho</option>
-        </select><br><br>
+        <form action="/transacoes/adicionar" method="post" class="space-y-4">
+            <div>
+                <label for="descricao" class="block text-sm font-medium text-gray-700">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required
+                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
 
-        <label for="dataTransacao">Data da Transação:</label>
-        <input type="date" id="dataTransacao" name="dataTransacao" required><br><br>
+            <div>
+                <label for="valor" class="block text-sm font-medium text-gray-700">Valor:</label>
+                <input type="number" id="valor" name="valor" step="0.01" required
+                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
 
-        <button type="submit">Adicionar Transação</button>
-    </form>
+            <div>
+                <label for="tipo" class="block text-sm font-medium text-gray-700">Tipo:</label>
+                <select id="tipo" name="tipo" required
+                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="Gasto">Gasto</option>
+                    <option value="Ganho">Ganho</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="dataTransacao" class="block text-sm font-medium text-gray-700">Data da Transação:</label>
+                <input type="date" id="dataTransacao" name="dataTransacao" required
+                    class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+
+            <button type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded shadow-md">
+                Adicionar Transação
+            </button>
+        </form>
+    </div>
+
 </body>
 </html>
